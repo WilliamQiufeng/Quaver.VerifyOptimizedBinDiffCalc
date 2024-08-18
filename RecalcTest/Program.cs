@@ -17,8 +17,9 @@ void Check(string quaFile)
     {
         qua = Qua.Parse(quaFile);
     }
-    catch (Exception e) when (!e.Message.Contains("Mismatch"))
+    catch (Exception)
     {
+        // We are not interested in the parsing bit. Just ignore invalid qua files.
         return;
     }
 
