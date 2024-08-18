@@ -3,7 +3,8 @@
 using Quaver.API.Maps;
 
 // Replace with your own path to songs
-const string path = @"E:\SteamLibrary\steamapps\common\Quaver\Songs";
+var path = args.Length > 0 ? args[0] : @"E:\SteamLibrary\steamapps\common\Quaver\Songs";
+
 
 var count = 0;
 Parallel.ForEach(Directory.EnumerateFiles(path, "*.qua", SearchOption.AllDirectories), Check);
